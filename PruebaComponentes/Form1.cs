@@ -41,10 +41,18 @@ namespace PruebaComponentes
             Text = labelTextBox1.Posicion.ToString();
         }
 
+
         // Este evento establece el valor del título del Form al valor de la propiedad separacion cuando ésta cambia
         private void labelTextBox1_CambiaSeparacion(object sender, EventArgs e)
         {
             Text = labelTextBox1.Separacion.ToString();
+        }
+
+
+        // Este evento es lanzado cuando cambia el texto del TextBox
+        private void labelTextBox1_TxtChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Texto cambiado");
         }
     }
 }

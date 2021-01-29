@@ -41,6 +41,13 @@ namespace ApuntesT5
         [Description("Se lanza cuando la propiedad Separación cambia")]
         public event EventHandler CambiaSeparacion;
 
+
+        // Este evento se lanza si se detecta un cambio de la propiedad separacion
+        [Category("La propiedad cambió")]
+        [Description("Se lanza cuando sucede el evento TextChanged en el TextBox txt")]
+        public event EventHandler TxtChanged;
+
+
         private ePosicion posicion = ePosicion.IZQUIERDA;
 
 
@@ -172,17 +179,41 @@ namespace ApuntesT5
         }
 
 
+
+
         // Cada vez que se cambie el tamaño de este nuevo componente, hago que se recoloque todo para que se muestre mejor en el Form final
         private void LabelTextBox_SizeChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Cambio de tamaño");
         }
 
+
         // Si no se tiene acceso, creamos la función "On" de SizeChanged desde la que lanzamos el evento SizeChanged real del nuevo componente
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
             recolocar();
+        }
+
+
+        // Acciones a realizar cuando se cambia el texto del TextBox txt
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            if (TxtChanged != null) // Compruebo que el evento no sea null
+            {
+                TxtChanged(this, EventArgs.Empty); // Y lanzo el evento TxtChanged
+            }
+        }
+
+        private void LabelTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine("KeyUp de LabelTextBox");
+        }
+
+
+        private void txt_KeyUp(object sender, KeyEventArgs e) // Al saltar el evento KeyUp de txt
+        {
+            LabelTextBox_KeyUp(sender, e); // Salta el evento KeyUp de LabelTextBox
         }
     }
 }

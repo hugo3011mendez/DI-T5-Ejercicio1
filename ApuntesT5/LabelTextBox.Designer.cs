@@ -47,6 +47,8 @@
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(100, 20);
             this.txt.TabIndex = 1;
+            this.txt.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_KeyUp);
             // 
             // LabelTextBox
             // 
@@ -58,6 +60,7 @@
             this.Name = "LabelTextBox";
             this.Size = new System.Drawing.Size(233, 150);
             this.SizeChanged += new System.EventHandler(this.LabelTextBox_SizeChanged);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LabelTextBox_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

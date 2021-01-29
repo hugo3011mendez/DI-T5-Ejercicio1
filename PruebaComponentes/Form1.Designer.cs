@@ -55,6 +55,7 @@
             this.labelTextBox1.TextTxt = "";
             this.labelTextBox1.CambiaPosicion += new System.EventHandler(this.labelTextBox1_CambiaPosicion);
             this.labelTextBox1.CambiaSeparacion += new System.EventHandler(this.labelTextBox1_CambiaSeparacion);
+            this.labelTextBox1.TxtChanged += new System.EventHandler(this.labelTextBox1_TxtChanged);
             // 
             // Form1
             // 
