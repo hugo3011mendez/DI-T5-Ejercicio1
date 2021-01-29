@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCambiarTamanho = new System.Windows.Forms.Button();
+            this.btnCambiarPosicion = new System.Windows.Forms.Button();
             this.labelTextBox1 = new ApuntesT5.LabelTextBox();
             this.SuspendLayout();
             // 
-            // btnCambiarTamanho
+            // btnCambiarPosicion
             // 
-            this.btnCambiarTamanho.Location = new System.Drawing.Point(84, 128);
-            this.btnCambiarTamanho.Name = "btnCambiarTamanho";
-            this.btnCambiarTamanho.Size = new System.Drawing.Size(103, 58);
-            this.btnCambiarTamanho.TabIndex = 1;
-            this.btnCambiarTamanho.Text = "Cambiar tamaño de LabelTextBox";
-            this.btnCambiarTamanho.UseVisualStyleBackColor = true;
+            this.btnCambiarPosicion.Location = new System.Drawing.Point(84, 128);
+            this.btnCambiarPosicion.Name = "btnCambiarPosicion";
+            this.btnCambiarPosicion.Size = new System.Drawing.Size(103, 58);
+            this.btnCambiarPosicion.TabIndex = 1;
+            this.btnCambiarPosicion.Text = "Cambiar posición de los elementos";
+            this.btnCambiarPosicion.UseVisualStyleBackColor = true;
+            this.btnCambiarPosicion.Click += new System.EventHandler(this.btnCambiarPosicion_Click);
             // 
             // labelTextBox1
             // 
@@ -52,13 +53,15 @@
             this.labelTextBox1.TabIndex = 0;
             this.labelTextBox1.TextLbl = "Label";
             this.labelTextBox1.TextTxt = "";
+            this.labelTextBox1.CambiaPosicion += new System.EventHandler(this.labelTextBox1_CambiaPosicion);
+            this.labelTextBox1.CambiaSeparacion += new System.EventHandler(this.labelTextBox1_CambiaSeparacion);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 262);
-            this.Controls.Add(this.btnCambiarTamanho);
+            this.Controls.Add(this.btnCambiarPosicion);
             this.Controls.Add(this.labelTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -69,7 +72,7 @@
         #endregion
 
         private ApuntesT5.LabelTextBox labelTextBox1;
-        private System.Windows.Forms.Button btnCambiarTamanho;
+        private System.Windows.Forms.Button btnCambiarPosicion;
     }
 }
 

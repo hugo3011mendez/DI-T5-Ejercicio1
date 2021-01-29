@@ -35,6 +35,12 @@ namespace ApuntesT5
         [Description("Se lanza cuando la propiedad Posición cambia")]
         public event EventHandler CambiaPosicion;
 
+
+        // Este evento se lanza si se detecta un cambio de la propiedad separacion
+        [Category("La propiedad cambió")]
+        [Description("Se lanza cuando la propiedad Separación cambia")]
+        public event EventHandler CambiaSeparacion;
+
         private ePosicion posicion = ePosicion.IZQUIERDA;
 
 
@@ -80,6 +86,11 @@ namespace ApuntesT5
                 {
                     separacion = value;
                     recolocar();
+
+                    if (CambiaSeparacion != null) // Compruebo que el nuevo evento no sea null, es decir, que tenga un método asociado
+                    {
+                        CambiaSeparacion(this, EventArgs.Empty); // Y lanzo el evento cuando se cambia la separación
+                    }
                 }
                 else // Si el número introducido es negativo, se lanza una excepción
                 {
