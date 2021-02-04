@@ -48,6 +48,7 @@
             this.labelTextBox1.Location = new System.Drawing.Point(104, 69);
             this.labelTextBox1.Name = "labelTextBox1";
             this.labelTextBox1.Posicion = ApuntesT5.ePosicion.DERECHA;
+            this.labelTextBox1.PswChr = '\0';
             this.labelTextBox1.Separacion = 0;
             this.labelTextBox1.Size = new System.Drawing.Size(83, 20);
             this.labelTextBox1.TabIndex = 0;

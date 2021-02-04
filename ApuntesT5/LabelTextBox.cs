@@ -200,7 +200,7 @@ namespace ApuntesT5
         // Acciones a realizar cuando se cambia el texto del TextBox txt
         private void txt_TextChanged(object sender, EventArgs e)
         {
-            TxtChanged?.Invoke(this, EventArgs.Empty); // Y lanzo el evento TxtChanged
+            TxtChanged?.Invoke(this, EventArgs.Empty); // Lanzo el evento TxtChanged
         }
 
         private void LabelTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -219,6 +219,21 @@ namespace ApuntesT5
         public void onKeyUp(object sender, KeyEventArgs e)
         {
             LabelTextBox_KeyUp(sender, e); // Salta el evento KeyUp de LabelTextBox
+        }
+
+        // Category, Description, Set y Get para el texto del TextBox
+        [Category("Appearance")]
+        [Description("Caracter asociado con el PasswordChar del TextBox")]
+        public char PswChr
+        {
+            set
+            {
+                txt.PasswordChar = value;
+            }
+            get
+            {
+                return txt.PasswordChar;
+            }
         }
     }
 }
