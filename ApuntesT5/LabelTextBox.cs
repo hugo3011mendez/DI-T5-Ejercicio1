@@ -162,7 +162,8 @@ namespace ApuntesT5
                     // Establecemos altura del componente
                     this.Height = Math.Max(txt.Height, lbl.Height);
 
-                    break;
+                break;
+
 
                 case ePosicion.IZQUIERDA:
                     // Lo mismo que en el caso que sea DERECHA
@@ -174,7 +175,7 @@ namespace ApuntesT5
 
                     this.Height = Math.Max(txt.Height, lbl.Height);
 
-                    break;
+                break;
             }
         }
 
@@ -199,10 +200,7 @@ namespace ApuntesT5
         // Acciones a realizar cuando se cambia el texto del TextBox txt
         private void txt_TextChanged(object sender, EventArgs e)
         {
-            if (TxtChanged != null) // Compruebo que el evento no sea null
-            {
-                TxtChanged(this, EventArgs.Empty); // Y lanzo el evento TxtChanged
-            }
+            TxtChanged?.Invoke(this, EventArgs.Empty); // Y lanzo el evento TxtChanged
         }
 
         private void LabelTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -212,6 +210,13 @@ namespace ApuntesT5
 
 
         private void txt_KeyUp(object sender, KeyEventArgs e) // Al saltar el evento KeyUp de txt
+        {
+            onKeyUp(sender, e);
+        }
+
+
+        // Creo el evento público onKeyUp
+        public void onKeyUp(object sender, KeyEventArgs e)
         {
             LabelTextBox_KeyUp(sender, e); // Salta el evento KeyUp de LabelTextBox
         }
