@@ -211,15 +211,9 @@ namespace ApuntesT5
 
         private void txt_KeyUp(object sender, KeyEventArgs e) // Al saltar el evento KeyUp de txt
         {
-            onKeyUp(sender, e);
+            OnKeyUp(e);
         }
 
-
-        // Creo el evento público onKeyUp
-        public void onKeyUp(object sender, KeyEventArgs e)
-        {
-            LabelTextBox_KeyUp(sender, e); // Salta el evento KeyUp de LabelTextBox
-        }
 
         // Category, Description, Set y Get para el texto del TextBox
         [Category("Appearance")]
